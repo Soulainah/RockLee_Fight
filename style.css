@@ -1,0 +1,73 @@
+
+/*Font-family*/
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans&display=swap');
+/* font-family: 'Luckiest Guy', cursive; */
+/* * Pour enlever le style de base*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("images/garara_rocklee2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+/*Gameboy*/
+.gameboy{
+    background-color: teal;
+    border: 2px solid black;
+    height: 900px;
+    border-radius: 20px 20px 150px 20px;
+}
+.ecranjeu{
+    border: 50px solid black;
+    border-radius: 20px 20px 120px 20px;
+    margin: 25px;
+    background-image: url("images/arene.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+ /*Pour cacher le bouton rejouer*/
+ #rejouer{ 
+    display: none;
+    margin: 5px auto 0 auto;
+}
+/*Mes icones Vies*/
+.vies{
+    margin: 10px;
+}
+ion-icon{
+    font-size: 50px; /*Changer la taille*/
+    fill: red; /*Changer la couleur*/
+}
+/*BOuton*/
+.controlbutton{
+    padding: 0px 100px;
+}
+.btn{
+    border-radius: 50%;
+    background-color: black;
+}
+.plus{
+    font-weight: bold;
+    font-size: 200px;
+    color: black;
+    margin-top: -20%;
+}
+.boutonrond{
+    margin-top: -30%;
+}
+.btn1{
+    padding: 15px;
+}
+.boutonselect{
+    margin-top: 5%;
+}
+.btn2{
+   height: 20px; 
+   line-height: 5px;
+   transform: rotate(320deg);
+}
