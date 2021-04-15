@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> <!-- aos animation -->
     <link href="images/logo_KI_POU_CUI.png" rel="icon"> <!-- Favicons -->
@@ -17,7 +18,7 @@
     <div class="row d-flex justify-content-center mt-4">
         <div class="col-7 gameboy">
             <!--container ecran de jeu-->
-            <div class="ecranjeu">
+            <main class="ecranjeu">  
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="viesgaara">
@@ -26,12 +27,18 @@
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-end">
-                        <img src="images/gaara/defendre.png" class="img-fluid gaara" width="140" alt="image de gaara">
+                        <img src="images/gaara/gaara1.png" class="img-fluid gaara" width="100" alt="image de gaara">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <button id="rejouer">Rejouer ?</button>
+                        <button id="jouer" onclick="playGame()">Jouer</button>
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-6">
-                        <img src="images/rocklee/defendre.png" class="img-fluid rocklee" width="150" alt="image de rock lee">
+                        <img src="images/rocklee/rocklee1.png" class="img-fluid rocklee" width="100" alt="image de rock lee">
                     </div>
                     <div class="col-lg-6 d-flex align-items-end justify-content-end pr-5">
                         <div class="viesrocklee">
@@ -40,12 +47,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <button id="rejouer">Rejouer ?</button>
-                    </div>
-                </div>
-            </div>
+            </main>
             <!--container control button-->
             <div class="controlbutton">
                 <div class="row">
@@ -61,7 +63,7 @@
                 </div>
                 <div class="row boutonselect">
                     <div class="col-lg-12 d-flex justify-content-center mt-5">
-                        <button type="button" class="btn2 btn btn-dark mr-3">On/Off</button>
+                        <button type="button" class="btn2 btn btn-dark mr-3" onclick="allumer()">On/Off</button>
                         <button type="button" class="btn2 btn btn-dark" onclick="musique()">Musique</button>
                     </div>
                 </div>

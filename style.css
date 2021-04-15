@@ -1,7 +1,11 @@
-
 /*Font-family*/
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans&display=swap');
 /* font-family: 'Luckiest Guy', cursive; */
+/* Variables */
+:root{
+    --textShadow: 0 2px 2px rgba(0,0,0,.7); /*Ombres textes*/
+    --boxShadow: 0 0px 10px rgba(0,0,0,.2); /*Ombres boites*/
+}
 /* * Pour enlever le style de base*/
 *{
     padding: 0;
@@ -18,7 +22,7 @@ body{
 .gameboy{
     background-color: teal;
     border: 2px solid black;
-    height: 900px;
+    height: 850px;
     border-radius: 20px 20px 150px 20px;
 }
 .ecranjeu{
@@ -29,13 +33,27 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+} 
+#jouer{
+    font-family: 'Luckiest Guy', cursive; 
+    border: none;
+    background-color: transparent;
+    font-size: 50px;
+    color: red;
+    text-shadow: var(--textShadow); /*Pour utiliser nos variable*/
 }
  /*Pour cacher le bouton rejouer*/
  #rejouer{ 
     display: none;
     margin: 5px auto 0 auto;
+    font-family: 'Luckiest Guy', cursive; 
+    border: none;
+    background-color: transparent;
+    font-size: 50px;
+    color: red;
+    text-shadow: var(--textShadow); /*Pour utiliser nos variable*/
 }
-/*Mes icones Vies*/
+/*icones Vies*/
 .vies{
     margin: 10px;
 }
@@ -63,11 +81,8 @@ ion-icon{
 .btn1{
     padding: 15px;
 }
-.boutonselect{
-    margin-top: 5%;
-}
+
 .btn2{
-   height: 20px; 
    line-height: 5px;
    transform: rotate(320deg);
 }
