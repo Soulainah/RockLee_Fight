@@ -1,15 +1,40 @@
+//===Fonction pour changer le Background image
+function terrain() {
+    document.querySelector('.ecranjeu').style.backgroundImage = src('/home/descodeuses/Documents/Projets/Rocklee_Fight/images/garara_rocklee.jpg');
+ } 
+//===Fonction pour musique
+var track = document.getElementById('track');
+
+var controlBtn = document.getElementById('play-pause');
+
+function playPause() {
+    if (track.paused) {
+        track.play();
+        //controlBtn.textContent = "Pause";
+        controlBtn.className = "pause";
+    } else { 
+        track.pause();
+         //controlBtn.textContent = "Play";
+        controlBtn.className = "play";
+    }
+}
+//pour revenir a "Play";
+controlBtn.addEventListener("click", playPause);
+track.addEventListener("ended", function() {
+  controlBtn.className = "play";
+});
 //===========Declare les variables des images
-var rocklee = document.querySelector('.rocklee')
-var gaara = document.querySelector('.gaara')
+var rocklee = document.querySelector('.rocklee');
+var gaara = document.querySelector('.gaara');
 const rejouerBtn =  document.getElementById('rejouer');
 //===Variable point de vie
 const coeurVide = '<ion-icon name="heart-outline"></ion-icon>';
-const coeurPlein = '<ion-icon name="heart"></ion-icon>'
+const coeurPlein = '<ion-icon name="heart"></ion-icon>';
 const viesgaara = document.querySelector('.viesgaara');
 const viesrocklee = document.querySelector('.viesrocklee');
 //===Déclarer le tableau d'élément [0,1]
-var images_rocklee = ['attaquer', 'defendre']
-var images_gaara = ['attaquer', 'defendre']
+var images_rocklee = ['attaquer', 'defendre'];
+var images_gaara = ['attaquer', 'defendre'];
 //j'ai donné le parametre à Rockleechoice de (r) puis concatener les images 'images/' + la var du tableur + png
 //variable du Joueur (parametre r = rocklee)
 var Rockleechoice = (r) =>{
@@ -19,11 +44,6 @@ var Rockleechoice = (r) =>{
 var Gaarachoice = (g) =>{
     gaara.src = 'images/gaara/' + images_gaara[g] + '.png'
 }
-//===Fontion pour jouer
-// function playGame() {
-//     document.querySelector('.rocklee').src ="/home/descodeuses/Documents/Projets/Rocklee_Fight/images/rocklee/rocklee1.png";
-//     document.querySelector('.gaara').src ="/home/descodeuses/Documents/Projets/Rocklee_Fight/images/gaara/gaara1.png";
-// } 
 //===POur creer le RANDOM !
 //math.floor =  arrondir le math.random qui est normalement à virgule
 function attaque() {
@@ -36,32 +56,30 @@ function defendre() {
     Rockleechoice(1)
     compareSkills()
 }
-
-//FOnction pour comparer les mains Joueur vs Robot
+//FOnction pour comparer les degats
 var compareSkills = () => {
     const totalViesGaara = 6; // total de vie au départ
     const totalViesRocklee = 6; // total de vie au départ
 
     let viesGaara = totalViesGaara; //variable qui changera au fil du jeu
     let viesRocklee = totalViesRocklee; //variable qui changera au fil du jeu
-    if(Rockleechoice === 0){
-        if(Gaarachoice == 0){
+    if(rocklee === 0){
+        if(gaara == 0){
             viesRocklee --; 
             viesGaara --;
-            console.log(viesRocklee);
-            console.log(viesGaara);// perte de vie pour les deux
+            // perte de vie pour les deux
         }
-        else if (Gaarachoice == 1){
+        else if (gaara == 1){
             viesRocklee --;// perte de vie rock lee
         }
-    if(Rockleechoice === 1){
-            if(Gaarachoice == 0){
+    if(rocklee === 1){
+            if(gaara == 0){
                 viesGaara --;// perte de vie gaara
             }
-            else if (Gaarachoice == 1){
+            else if (gaara == 1){
                 console.log('match nul');// rien ne se passe
             }
-        }   
+        }
     }
     //fonction pour le nombre de vie
 //=====NOs coeur plein pour ROCK LEE

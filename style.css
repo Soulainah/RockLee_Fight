@@ -3,8 +3,8 @@
 /* font-family: 'Luckiest Guy', cursive; */
 /* Variables */
 :root{
-    --textShadow: 0 2px 2px rgba(0,0,0,.7); /*Ombres textes*/
-    --boxShadow: 0 0px 10px rgba(0,0,0,.2); /*Ombres boites*/
+    --textShadow: 0 10px 2px rgba(0,0,0); /*Ombres textes*/
+    --boxShadow: 0 0px 20px rgba(0,0,0,.2); /*Ombres boites*/
 }
 /* * Pour enlever le style de base*/
 *{
@@ -34,14 +34,6 @@ body{
     background-size: cover;
     background-position: center;
 } 
-#jouer{
-    font-family: 'Luckiest Guy', cursive; 
-    border: none;
-    background-color: transparent;
-    font-size: 50px;
-    color: red;
-    text-shadow: var(--textShadow); /*Pour utiliser nos variable*/
-}
  /*Pour cacher le bouton rejouer*/
  #rejouer{ 
     display: none;
@@ -81,8 +73,16 @@ ion-icon{
 .btn1{
     padding: 15px;
 }
-
 .btn2{
    line-height: 5px;
    transform: rotate(320deg);
+}
+#play-pause{
+    border-radius: 50%;
+    background-color: black;
+    line-height: 5px;
+    padding: 10px;
+    transform: rotate(320deg);
+    color: white;
+    border: none;
 }
