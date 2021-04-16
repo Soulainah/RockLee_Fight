@@ -1,8 +1,25 @@
 //===Fonction pour changer le Background image
+var images_defaut = document.getElementById('ecranjeu');
+//déclarer le tableau d'élément [0,1]
+var Background_images = ['terrain_de_Konoha', 'terrain_de_Suna']
+var TerrainChoice = (t) =>{
+    images_defaut.src = 'images/' + Background_images[t] + '.png' + '.jpg'
+    images_defaut.value = Background_images[t]
+}
 function terrain() {
-    document.getElementById('ecranjeu').style.backgroundImage = "url(images/terrain_de_Konoha.png)";
-    document.getElementById('ecranjeu').style.backgroundImage = "url(images/terrain_de_Suna.png)";
- } 
+    TerrainChoice(Math.floor(Math.random() * 2))
+ }
+
+
+
+
+
+
+
+
+
+
+//=================================================A FAIRE A FAIRE A FAIRE A FAIRE !!!!!
 //===Fonction pour musique
 var track = document.getElementById('track');
 
@@ -24,105 +41,73 @@ controlBtn.addEventListener("click", playPause);
 track.addEventListener("ended", function() {
   controlBtn.className = "play";
 });
-//===========Declare les variables des images
-var rocklee = document.querySelector('.rocklee');
-var gaara = document.querySelector('.gaara');
-const rejouerBtn =  document.getElementById('rejouer');
-//===Variable point de vie
-const coeurVide = '<ion-icon name="heart-outline"></ion-icon>';
-const coeurPlein = '<ion-icon name="heart"></ion-icon>';
-const viesgaara = document.querySelector('.viesgaara');
-const viesrocklee = document.querySelector('.viesrocklee');
-//===Déclarer le tableau d'élément [0,1]
-var images_rocklee = ['attaquer', 'defendre'];
-var images_gaara = ['attaquer', 'defendre'];
-//j'ai donné le parametre à Rockleechoice de (r) puis concatener les images 'images/' + la var du tableur + png
-//variable du Joueur (parametre r = rocklee)
-var Rockleechoice = (r) =>{
-    rocklee.src = 'images/rocklee/' + images_rocklee[r] + '.png'
+//===Fonction pour le jeu
+
+
+
+
+
+
+
+
+
+
+//declare les variable des boutons 
+//declare les variable des images
+var Gaara_start = document.querySelector('.Gaara_start')
+var Rocklee_start = document.querySelector('.Rocklee_start')
+//declare les variable des scores 
+var Gaara_scoreSpan = document.getElementById('Gaara_score')
+var Rocklee_scoreSpan = document.getElementById('Rocklee_score')
+//declare les variable des resultats scores 
+var Gaara_score = 0
+var Rocklee_score = 0
+//déclarer le tableau d'élément [0,1]
+var images_optionGaara = ['attaquer', 'defendre']
+var images_optionRocklee = ['attaquer', 'defendre']
+//j'ai donné le parametre à Pchoice de (i) puis concatener les images 'images/' + la var du tableur + png
+//variable de GAARA (ordi)
+var Gaara_choice = (g) =>{
+     Gaara_start.src = 'images/gaara/' + images_optionGaara[g] + '.png'
+     Gaara_start.value = images_optionGaara[g]
+ }
+//variable ROCKLEE (joueur)
+var Rocklee_choice = (r) =>{
+    Rocklee_start.src = 'images/rocklee/' + images_optionRocklee[r] + '.png'
+    Rocklee_start.value = images_optionRocklee[r]
+    compareSkills()
 }
-//variable de l'ordi (parametre g = gaara)
-var Gaarachoice = (g) =>{
-    gaara.src = 'images/gaara/' + images_gaara[g] + '.png'
-}
-//===POur creer le RANDOM !
 //math.floor =  arrondir le math.random qui est normalement à virgule
-function attaque() {
-    Gaarachoice(Math.floor(Math.random() * 2))
-    Rockleechoice(0)
-    compareSkills()
-}
+function attaquer() {
+     Gaara_choice(Math.floor(Math.random() * 2))
+     Rocklee_choice(0)
+ }
 function defendre() {
-    Gaarachoice(Math.floor(Math.random() * 2))
-    Rockleechoice(1)
-    compareSkills()
-}
-//FOnction pour comparer les degats
+    Gaara_choice(Math.floor(Math.random() * 2))
+    Rocklee_choice(1)
+ }
+//FOnction pour comparer les skills des joueurs
 var compareSkills = () => {
-    const totalViesGaara = 6; // total de vie au départ
-    const totalViesRocklee = 6; // total de vie au départ
-
-    let viesGaara = totalViesGaara; //variable qui changera au fil du jeu
-    let viesRocklee = totalViesRocklee; //variable qui changera au fil du jeu
-    if(rocklee === 0){
-        if(gaara == 0){
-            viesRocklee --; 
-            viesGaara --;
-            // perte de vie pour les deux
+    if(Rocklee_start.value == 'attaquer'){
+        if(Gaara_start.value == 'defendre'){
+            Gaara_score += 1
+            Rocklee_score -= 1
         }
-        else if (gaara == 1){
-            viesRocklee --;// perte de vie rock lee
-        }
-    if(rocklee === 1){
-            if(gaara == 0){
-                viesGaara --;// perte de vie gaara
-            }
-            else if (gaara == 1){
-                console.log('match nul');// rien ne se passe
-            }
+        else if (Gaara_start.value == 'attaquer'){
+            Gaara_score += 1
+            Rocklee_score += 1
         }
     }
-    //fonction pour le nombre de vie
-//=====NOs coeur plein pour ROCK LEE
-const actualiseCoeursRocklee = (viesRocklee) => {
-    viesrocklee.innerHTML = '';
-    let tableauDeViesRL = [];
-    for(let i = 0; i < viesRocklee; i++) {
-        tableauDeViesRL.push(coeurPlein);
+    if(Rocklee_start.value == 'defendre'){
+        if(Gaara_start.value == 'defendre'){
+            Gaara_score += 1
+            Rocklee_score += 1
+        }
+        else if (Gaara_start.value == 'attaquer'){
+            Rocklee_score += 1
+            Gaara_score -= 1
+        }
     }
-//Nos coeur vide
-    for(let i = 0; i < totalViesRocklee - viesRocklee; i++) {
-        tableauDeViesRL.push(coeurVide);
-    }
-//AJouter dans le code HTML 
-    tableauDeViesRL.forEach(coeur => {
-        viesrocklee.innerHTML += coeur;
-    })
+    Rocklee_scoreSpan.textContent = Rocklee_score
+    Gaara_scoreSpan.textContent = Gaara_score
 }
- //====NOs coeur plein pour GAARA
- const actualiseCoeursGaara = (viesGaara) => {
-   viesgaara.innerHTML = '';
-     let tableauDeViesG = [];
-    for(let i = 0; i < viesGaara; i++) {
-        tableauDeViesG.push(coeurPlein);
-   }
-// //Nos coeur vide
-     for(let i = 0; i < totalViesGaara - viesGaara; i++) {
-        tableauDeViesG.push(coeurVide);
-    }
-// //AJouter dans le code HTML 
-    tableauDeViesG.forEach(coeur => {
-        viesgaara.innerHTML += coeur;
-   })
-}
-actualiseCoeursGaara(viesGaara); //POur le debut du jeu
-actualiseCoeursRocklee(viesRocklee); //POur le debut du jeu
-}
-    
-    //===Bouton pour rejouer , pour relancer la page
-    rejouerBtn.addEventListener('click', () => {
-        message.style.display = 'none'; //enlever le message
-        document.location.reload(true);
-    })//fin de compareSkills
-
-
