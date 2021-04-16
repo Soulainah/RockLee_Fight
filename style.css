@@ -25,7 +25,7 @@ body{
     height: 850px;
     border-radius: 20px 20px 150px 20px;
 }
-.ecranjeu{
+#ecranjeu{
     border: 50px solid black;
     border-radius: 20px 20px 120px 20px;
     margin: 25px;

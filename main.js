@@ -1,6 +1,7 @@
 //===Fonction pour changer le Background image
 function terrain() {
-    document.querySelector('.ecranjeu').style.backgroundImage = src('/home/descodeuses/Documents/Projets/Rocklee_Fight/images/garara_rocklee.jpg');
+    document.getElementById('ecranjeu').style.backgroundImage = "url(images/terrain_de_Konoha.png)";
+    document.getElementById('ecranjeu').style.backgroundImage = "url(images/terrain_de_Suna.png)";
  } 
 //===Fonction pour musique
 var track = document.getElementById('track');
