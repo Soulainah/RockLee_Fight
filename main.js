@@ -1,25 +1,10 @@
 //===Fonction pour changer le Background image
-var images_defaut = document.getElementById('ecranjeu');
-//déclarer le tableau d'élément [0,1]
-var Background_images = ['terrain_de_Konoha', 'terrain_de_Suna']
-var TerrainChoice = (t) =>{
-    images_defaut.src = 'images/' + Background_images[t] + '.png' + '.jpg'
-    images_defaut.value = Background_images[t]
+function terrain(){
+    const images = ['url("images/arene.jpg")', 'url("images/terrain_de_Konoha.png")', 'url("images/terrain_de_Suna.png")'];
+    const ecranjeu = document.getElementById('ecranjeu');
+    const bg = images[Math.floor(Math.random() * 3)];
+    ecranjeu.style.backgroundImage = bg;
 }
-function terrain() {
-    TerrainChoice(Math.floor(Math.random() * 2))
- }
-
-
-
-
-
-
-
-
-
-
-//=================================================A FAIRE A FAIRE A FAIRE A FAIRE !!!!!
 //===Fonction pour musique
 var track = document.getElementById('track');
 
