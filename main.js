@@ -76,7 +76,6 @@ var compareSkills = () => {
     if(Rocklee_start.value == 'attaquer'){
         if(Gaara_start.value == 'defendre'){
             Gaara_score += 1
-            Rocklee_score -= 1
         }
         else if (Gaara_start.value == 'attaquer'){
             Gaara_score += 1
@@ -90,7 +89,6 @@ var compareSkills = () => {
         }
         else if (Gaara_start.value == 'attaquer'){
             Rocklee_score += 1
-            Gaara_score -= 1
         }
     }
     Rocklee_scoreSpan.textContent = Rocklee_score

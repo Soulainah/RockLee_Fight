@@ -21,7 +21,29 @@ body{
 /*Modale regle de jeu*/
 .text-rules{
     border: none;
-}
+    animation: shake .8s ease-in infinite;
+  }
+  @keyframes shake{
+      0%{
+          transform: translate(0);
+      }
+      20%,
+      40%,
+      60%,
+      80%{
+          transform: translate(.15em);
+          box-shadow: 0px 6px 20px rgba(0,0,0,0.5);
+      }
+      10%,
+      30%,
+      50%{
+          transform: translate(-.2em);
+      }
+      70%,
+      100%{
+          transform: translate(0);
+      }
+  }
 /*Gameboy*/
 .gameboy{
     background-color: teal;
