@@ -17,7 +17,7 @@
 <!--Modale regle de jeu-->          
 <div class="container-fluid">
     <div class="row">
-        <button class="text-rules button bg-transparent"data-toggle="modal" data-target="#exampleModal"><img src="images/Game_rules.png" width="100" alt="rules"></button>
+        <button class="text-rules button bg-transparent"data-toggle="modal" data-target="#exampleModal"><img src="images/Game_rules.png" width="100" alt="rock lee rules"></button>
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -35,9 +35,9 @@
                             <li>Musique = Mettre de la musique</li>
                         <p class="mt-3"><u>Points de vie :</u></p>
                             <li>Attaque VS Attaque = Rock Lee et Gaara perdent un point !</li>
-                            <li>Attaque VS Défense = Rock Lee perd un point et Gaara gagne un point</li>
-                            <li>Défense VS Défense = Rock Lee et Gaara gagnent un point !</li>
-                            <li>Défense VS Attaque = Rock Lee gagne un point et Gaara perd un point</li>
+                            <li>Attaque VS Défense = Rock Lee perd un point !</li>
+                            <li>Défense VS Défense = Rien ne se passe !</li>
+                            <li>Défense VS Attaque = Gaara perd un point</li>
                         <p class="mt-3 text-center text-danger display-4">GAMBATTE ROCK LEE !</p>
                     </div>
                 </div>
@@ -50,30 +50,35 @@
     <div class="row d-flex justify-content-center">
         <div class="col-7 gameboy">
             <!--container ecran de jeu-->
-            <main id="ecranjeu">  
+            <main class="ecranjeu">  
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="vies_joueurs">
                             <p>GAARA = <span id="Gaara_score"></span></p>
+                            <!-- <ion-icon name="heart-outline"></ion-icon>
+                            <ion-icon name="heart"></ion-icon> -->
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-end">
                         <img src="images/gaara/gaara1.png" class="img-fluid Gaara_start" width="100" alt="image de gaara">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-center">
-                        <button id="rejouer">Rejouer ?</button>
-                    </div>
-                </div>
-                <div class="row d-flex justify-content-center">
+                
+                <div class="row d-flex justify-content-center ">
                     <div class="col-lg-6">
                         <img src="images/rocklee/rocklee1.png" class="img-fluid Rocklee_start" width="100" alt="image de rock lee">
                     </div>
                     <div class="col-lg-6 d-flex align-items-end justify-content-end pr-5">
                         <div class="vies_joueurs">
                             <p><span id="Rocklee_score"></span>= ROCK LEE</p>
+                            <!-- <ion-icon name="heart-outline"></ion-icon>
+                            <ion-icon name="heart"></ion-icon> -->
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <button id="rejouer">Rejouer ?</button>
                     </div>
                 </div>
             </main>

@@ -21,28 +21,6 @@ body{
 /*Modale regle de jeu*/
 .text-rules{
     border: none;
-    animation: shake .8s ease-in infinite;
-  }
-  @keyframes shake{
-      0%{
-          transform: translate(0);
-      }
-      20%,
-      40%,
-      60%,
-      80%{
-          transform: translate(.15em);
-          box-shadow: 0px 6px 20px rgba(0,0,0,0.5);
-      }
-      10%,
-      30%,
-      50%{
-          transform: translate(-.2em);
-      }
-      70%,
-      100%{
-          transform: translate(0);
-      }
   }
 /*Gameboy*/
 .gameboy{
@@ -51,7 +29,7 @@ body{
     height: 820px;
     border-radius: 20px 20px 150px 20px;
 }
-#ecranjeu{
+.ecranjeu{
     border: 50px solid black;
     border-radius: 20px 20px 120px 20px;
     margin: 25px;
@@ -60,9 +38,16 @@ body{
     background-size: cover;
     background-position: center;
 } 
+.youloose{
+    background-image: url("images/rocklee/rocklee_loose.png");
+    background-size: 99%;
+}
+.youwin {
+    background-image: url("images/rocklee/rocklee_win.png");
+    background-size: 77%;
+}
  /*Pour cacher le bouton rejouer*/
  #rejouer{ 
-    display: none;
     margin: 5px auto 0 auto;
     font-family: 'Luckiest Guy', cursive; 
     border: none;
