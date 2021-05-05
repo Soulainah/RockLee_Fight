@@ -19,7 +19,7 @@ body{
     background-position: center;
     height: 700px;
 }
-#jouer{
+#jouer, .name{
     font-family: 'Luckiest Guy', cursive; 
     border: none;
     background-color: transparent;
@@ -33,4 +33,20 @@ body{
 }
 .bas{
     height: 750px;
+}
+@media screen and (max-width : 1024px){ /*version tablette*/
+    .name{
+        font-size: 60px;
+    }
+    .bas{
+        height: 550px;
+    }
+}
+@media screen and (max-width : 600px){ /*version portable*/
+    #jouer{
+        font-size: 60px;
+    }
+    .name{
+        display: none;
+    }
 }

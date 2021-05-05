@@ -98,3 +98,39 @@ body{
     color: white;
     border: none;
 }
+@media screen and (max-width : 1024px){ /*version tablette*/
+    .ecranjeu{
+        height: 500px;
+    } 
+    .texte_rocklee{
+        margin-top: -50px;
+    }
+    #rejouer{ 
+        margin-top: -80px;
+    }
+    .boutonrond{
+        margin-top: -200px;
+    }
+}
+@media screen and (max-width : 600px){ /*version portable*/
+    .gameboy{
+        height: 700px;
+    }
+    .ecranjeu{
+        height: 400px;
+        border: 20px solid black;
+        margin: 15px 0;  
+    } 
+    .Gaara_start {
+        margin-top: -50px;
+    }
+    .texte_rocklee{
+        margin-top: -60px;
+    }
+    .boutonrond{
+        margin-left: 200px;
+    }
+    .plus{
+        margin-left: -100px;
+    }
+}
